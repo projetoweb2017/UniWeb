@@ -1,230 +1,147 @@
 package Model;
 
 public class Cadastro {
+
+	
+	private int id;
+    private String nome;
+    private String datadenascimento;
+    private String sexo;
+    private String email;
+    private String telefoneresidencial;
+    private String telefonecelular;
+    private String universidade;
+    private String curso;
     
-	private int Id;
-    private String Nome_Completo;
-    private String Data_de_Nascimento;
-    private String Sexo;
-    private String CPF = "0";
-    private String RG = "0";
-    private String CEP = "0";
-    private String Endereco = "0";
-    private String Numero = "0";
-    private String Complemento = "0";
-    private String Bairro = "0";
-    private String Cidade = "0";
-    private String UF = "0";
-    private String Email;
-    private String Telefone_Residencial = "0";
-    private String Telefone_Celular;
-    private String Universidade = "0";
-    private String EnderecoUniversidade = "0";
-    private String Curso;
-    private String Usuario;
-    private String Senha;
-    private String ConfirmarSenha = "0";
-    private String PerguntaSecreta = "0";
-    private String Cargo = "Colaborador";
-    private String Categoria = "Colaborador";
+    private String usuario;
+    private String senha;
+    private String confirmarsenha;
+    
+    private String perguntasecreta;
+    
+    private String cargo = "Colaborador";
+    private String categoria = "Colaborador";
+    
 
-    public String getNome_Completo() {
-        return Nome_Completo;
+    public String getNomeCompleto() {
+        return nome;
     }
 
-    public void setNome_Completo(String Nome_Completo) {
-        this.Nome_Completo = Nome_Completo;
+    public void setNomeCompleto(String Nome_Completo) {
+        this.nome = Nome_Completo;
     }
 
-    public String getData_de_Nascimento() {
-        return Data_de_Nascimento;
+    public String getDataDeNascimento() {
+        return datadenascimento;
     }
 
-    public void setData_de_Nascimento(String Data_de_Nascimento) {
-        this.Data_de_Nascimento = Data_de_Nascimento;
+    public void setDataDeNascimento(String Data_de_Nascimento) {
+        this.datadenascimento = Data_de_Nascimento;
     }
 
     public String getSexo() {
-        return Sexo;
+        return sexo;
     }
 
     public void setSexo(String Sexo) {
-        this.Sexo = Sexo;
+        this.sexo = Sexo;
     }
 
-    public String getCPF() {
-        return CPF;
-    }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
-
-    public String getRG() {
-        return RG;
-    }
-
-    public void setRG(String RG) {
-        this.RG = RG;
-    }
-
-    public String getCEP() {
-        return CEP;
-    }
-
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
-    }
-
-    public String getEndereco() {
-        return Endereco;
-    }
-
-    public void setEndereco(String Endereco) {
-        this.Endereco = Endereco;
-    }
-
-    public String getNumero() {
-        return Numero;
-    }
-
-    public void setNumero(String Numero) {
-        this.Numero = Numero;
-    }
-
-    public String getComplemento() {
-        return Complemento;
-    }
-
-    public void setComplemento(String Complemento) {
-        this.Complemento = Complemento;
-    }
-
-    public String getBairro() {
-        return Bairro;
-    }
-
-    public void setBairro(String Bairro) {
-        this.Bairro = Bairro;
-    }
-
-    public String getCidade() {
-        return Cidade;
-    }
-
-    public void setCidade(String Cidade) {
-        this.Cidade = Cidade;
-    }
-
-    public String getUF() {
-        return UF;
-    }
-
-    public void setUF(String UF) {
-        this.UF = UF;
-    }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
-    public String getTelefone_Residencial() {
-        return Telefone_Residencial;
+    public String getTelefoneResidencial() {
+        return telefoneresidencial;
     }
 
-    public void setTelefone_Residencial(String Telefone_Residencial) {
-        this.Telefone_Residencial = Telefone_Residencial;
+    public void setTelefoneResidencial(String Telefone_Residencial) {
+        this.telefoneresidencial = Telefone_Residencial;
     }
 
-    public String getTelefone_Celular() {
-        return Telefone_Celular;
+    public String getTelefoneCelular() {
+        return telefonecelular;
     }
 
-    public void setTelefone_Celular(String Telefone_Celular) {
-        this.Telefone_Celular = Telefone_Celular;
+    public void setTelefoneCelular(String Telefone_Celular) {
+        this.telefonecelular = Telefone_Celular;
     }
 
     public String getUniversidade() {
-        return Universidade;
+        return universidade;
     }
 
     public void setUniversidade(String Universidade) {
-        this.Universidade = Universidade;
-    }
-
-    public String getEnderecoUniversidade() {
-        return EnderecoUniversidade;
-    }
-
-    public void setEnderecoUniversidade(String EnderecoUniversidade) {
-        this.EnderecoUniversidade = EnderecoUniversidade;
+        this.universidade = Universidade;
     }
 
     public String getCurso() {
-        return Curso;
+        return curso;
     }
 
     public void setCurso(String Curso) {
-        this.Curso = Curso;
+        this.curso = Curso;
     }
 
     public String getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(String Usuario) {
-        this.Usuario = Usuario;
+        this.usuario = Usuario;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
     public void setSenha(String Senha) {
-        this.Senha = Senha;
+        this.senha = Senha;
     }
 
     public String getConfirmarSenha() {
-        return ConfirmarSenha;
+        return confirmarsenha;
     }
 
     public void setConfirmarSenha(String ConfirmarSenha) {
-        this.ConfirmarSenha = ConfirmarSenha;
+        this.confirmarsenha = ConfirmarSenha;
     }
 
     public String getPerguntaSecreta() {
-        return PerguntaSecreta;
+        return perguntasecreta;
     }
 
     public void setPerguntaSecreta(String PerguntaSecreta) {
-        this.PerguntaSecreta = PerguntaSecreta;
+        this.perguntasecreta = PerguntaSecreta;
     }
 
     public String getCargo() {
-        return Cargo;
+        return cargo;
     }
 
     public void setCargo(String Cargo) {
-        this.Cargo = Cargo;
+        this.cargo = Cargo;
     }
     public String getCategoria() {
-        return Categoria;
+        return categoria;
     }
 
     public void setCategoria(String Categoria) {
-        this.Categoria = Categoria;
+        this.categoria = Categoria;
     }
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
             
 }

@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.List;
+
 import DAO.CadastroDAO;
 import Model.Cadastro;
 
@@ -23,6 +25,10 @@ public class CadastroService {
 	
 	public boolean CheckEmail(String Email) {
 		return dao.CheckEmail(Email);
+	}
+	
+	public List<Cadastro> carregarTodosCadastros(){
+		return dao.carregarTodosCadastros();
 	}
 
 }

@@ -14,12 +14,9 @@ import Model.Cadastro;
 import Service.CadastroService;
 
 
-@WebServlet("/CadastroS.do")
+@WebServlet("/Cadastro.do")
 public class CadastroController extends HttpServlet {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 
@@ -35,26 +32,33 @@ public class CadastroController extends HttpServlet {
         
         //Carrega os campos para as Strings
         String pNome = request.getParameter("nome");
-		String pData = request.getParameter("data");
+		String pData = request.getParameter("dataDeNascimento");
 		String pSexo = request.getParameter("sexo");
 		String pEmail = request.getParameter("email");
-		String pCelular = request.getParameter("celular");
+		String pResidencial = request.getParameter("telR");
+		String pCelular = request.getParameter("telC");
+		String pUniversidade = request.getParameter("universidade");
 		String pCurso = request.getParameter("curso");
+		
 		
 		
 		String pUsuario = request.getParameter("usuario");
 		String pSenha = request.getParameter("senha");
+		String pSecreta = request.getParameter("pergunta");
 		
 		//Cria o objeto CA
-		ca.setNome_Completo(pNome);
-		ca.setData_de_Nascimento(pData);
+		ca.setNomeCompleto(pNome);
+		ca.setDataDeNascimento(pData);
 		ca.setSexo(pSexo);
 		ca.setEmail(pEmail);
-		ca.setTelefone_Celular(pCelular);
+		ca.setTelefoneResidencial(pResidencial);
+		ca.setTelefoneCelular(pCelular);
+		ca.setUniversidade(pUniversidade);
 		ca.setCurso(pCurso);
 		
 		ca.setUsuario(pUsuario);
 		ca.setSenha(pSenha);
+		ca.setPerguntaSecreta(pSecreta);
 		
 		
 		se.InserirCadastro(ca);	
@@ -65,7 +69,7 @@ public class CadastroController extends HttpServlet {
 		//enviar para o jsp
 		request.setAttribute("cadastro", ca);
 		RequestDispatcher view =
-		request.getRequestDispatcher("CarregarCadastro.jsp");
+		request.getRequestDispatcher("index.jsp");
 		view.forward(request, response);
 
 
