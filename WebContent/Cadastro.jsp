@@ -16,7 +16,6 @@
 
 <body>
 	<!-- Barra superior com os menus de navegacao -->
-	<c:import url="Menu.jsp" />
 	<!-- Container Principal -->
 	<div id="main" class="container">
 		<h3 class="page-header">Cadastro</h3>
@@ -122,7 +121,8 @@
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary" name="acao"
-						value="Criar">Criar</button> <a href="index.jsp" class="btn btn-default">Voltar</a>
+						value="Criar">Criar</button>
+					<a href="index.jsp" class="btn btn-default">Voltar</a>
 				</div>
 			</div>
 		</form>

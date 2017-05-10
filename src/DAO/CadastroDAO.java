@@ -2,6 +2,7 @@ package DAO;
 
 import Model.Cadastro;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +16,91 @@ import javax.swing.JOptionPane;
 public class CadastroDAO {
 
 	private boolean check = false;
+	
+	public ArrayList<Cadastro> listarCadastros() {
+		Cadastro cadastro;
+		ArrayList<Cadastro> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Id, Nome_Completo, Data_de_Nascimento, Sexo , Email , Telefone_Celular, Curso FROM cadastro";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					cadastro = new Cadastro();
+					cadastro.setId(rs.getInt("Id"));
+					cadastro.setNomeCompleto(rs.getString("Nome_Completo"));
+					cadastro.setDataDeNascimento(rs.getString("Data_de_Nascimento"));
+					cadastro.setSexo(rs.getString("Sexo"));
+					cadastro.setEmail(rs.getString("Email"));
+					cadastro.setTelefoneCelular(rs.getString("Telefone_Celular"));
+					cadastro.setCurso(rs.getString("Curso"));
+					lista.add(cadastro);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+
+	public ArrayList<Cadastro> listarCadastros(String chave) {
+		Cadastro cadastro;
+		ArrayList<Cadastro> lista = new ArrayList<>();
+		String sqlSelect = "SELECT Nome_Completo, Data_de_Nascimento, Sexo , Email , Telefone_Celular, Curso FROM cadastro where upper(Nome_Completo) like ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					cadastro = new Cadastro();
+					cadastro.setId(rs.getInt("Id"));
+					cadastro.setNomeCompleto(rs.getString("Nome_Completo"));
+					cadastro.setDataDeNascimento(rs.getString("Data_de_Nascimento"));
+					cadastro.setSexo(rs.getString("Sexo"));
+					cadastro.setEmail(rs.getString("Email"));
+					cadastro.setTelefoneCelular(rs.getString("Telefone_Celular"));
+					cadastro.setCurso(rs.getString("Curso"));
+					lista.add(cadastro);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+	
+	public void excluir(int id) {
+		String sqlDelete = "DELETE FROM cadastro WHERE id = ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement stm = conn.prepareStatement(sqlDelete);) {
+			stm.setInt(1, id);
+			stm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void atualizar(Cadastro cadastro) {
+		
+		String sqlUpdate = "UPDATE cadastro SET Nome_Completo=?, Telefone_Celular=?, Email=? WHERE id=?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.getConnection();
+				PreparedStatement stm = conn.prepareStatement(sqlUpdate);) {
+			stm.setString(1, cadastro.getNomeCompleto());
+			stm.setString(2, cadastro.getTelefoneCelular());
+			stm.setString(3, cadastro.getEmail());
+			stm.setInt(4, cadastro.getId());
+			stm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public int InserirCadastro(Cadastro ca) {
 
@@ -312,12 +398,10 @@ public class CadastroDAO {
 	}
 
 	public List<Cadastro> carregarTodosCadastros() {
-		
+
 		Cadastro cadastro;
 
 		List<Cadastro> lista = new ArrayList<Cadastro>();
-		
-		
 
 		String sqlSelect = "SELECT ID , Nome_Completo, Data_de_Nascimento, Sexo , Email , Telefone_Residencial , Telefone_Celular, Universidade , Curso , Cargo , Categoria FROM cadastro;";
 		// usando o try with resources do Java 7, que fecha o que abriu
@@ -340,7 +424,7 @@ public class CadastroDAO {
 					cadastro.setCurso(rs.getString("Curso"));
 					cadastro.setCargo(rs.getString("Cargo"));
 					cadastro.setCategoria(rs.getString("Categoria"));
-					
+
 					lista.add(cadastro);
 
 				}

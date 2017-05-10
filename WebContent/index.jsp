@@ -15,12 +15,11 @@
 
 <body>
     <!-- Barra superior com os menus de navegacao -->
-	<c:import url="Menu.jsp"/>
     <!-- Container Principal -->
     <div id="main" class="container">
         <h3 class="page-header">Login</h3>
         <!-- Formulario para inclusao de clientes -->
-        <form action="ManterCliente.do" method="post">
+        <form action="controller.do" method="post">
             <!-- area de campos do form -->
             <div class="row">
                 <div class="form-group col-md-6">
@@ -39,7 +38,7 @@
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" name="acao" value="Criar">Entrar</button>
+                    <button type="submit" class="btn btn-primary" name="command" value="LoginUsuario">Entrar</button>
                 </div>
             </div>
         </form>

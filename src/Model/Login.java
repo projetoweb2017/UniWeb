@@ -6,199 +6,150 @@ public class Login {
 	private static Login instance;
 	
 	private int id;
-    private String Nome_Completo;
-    private String Data_de_Nascimento;
-    private String Sexo;
-    private String CPF;
-    private String RG;
-    private String CEP;
-    private String Endereco;
-    private String Numero;
-    private String Complemento;
-    private String Bairro;
-    private String Cidade;
-    private String UF;
-    private String Email;
-	private String Telefone_Residencial;
-    private String Telefone_Celular;
-    private String Universidade;
-    private String EnderecoUniversidade;
-    private String Curso;
-    private String Usuario;
-    private String Senha;
-    private String ConfirmarSenha;
-    private String PerguntaSecreta;
-    private String Cargo;
-    private String Categoria;
-    private int ID;
+    private String nome;
+    private String datadenascimento;
+    private String sexo;
+    private String email;
+    private String telefoneresidencial;
+    private String telefonecelular;
+    private String universidade;
+    private String curso;
+    
+    private String usuario;
+    private String senha;
+    private String confirmarsenha;
+    
+    private String perguntasecreta;
+    
+    private String cargo;
+    private String categoria;
+    
     
     public static Login getInstance() {
         if (instance == null)
             instance = new Login();
         return instance;
-    }
-    
-    
-    public String getNome_Completo() {
-		return Nome_Completo;
-	}
-	public void setNome_Completo(String nome_Completo) {
-		Nome_Completo = nome_Completo;
-	}
-	public String getData_de_Nascimento() {
-		return Data_de_Nascimento;
-	}
-	public void setData_de_Nascimento(String data_de_Nascimento) {
-		Data_de_Nascimento = data_de_Nascimento;
-	}
-	public String getSexo() {
-		return Sexo;
-	}
-	public void setSexo(String sexo) {
-		Sexo = sexo;
-	}
-	public String getCPF() {
-		return CPF;
-	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
-	}
-	public String getRG() {
-		return RG;
-	}
-	public void setRG(String rG) {
-		RG = rG;
-	}
-	public String getCEP() {
-		return CEP;
-	}
-	public void setCEP(String cEP) {
-		CEP = cEP;
-	}
-	public String getEndereco() {
-		return Endereco;
-	}
-	public void setEndereco(String endereco) {
-		Endereco = endereco;
-	}
-	public String getNumero() {
-		return Numero;
-	}
-	public void setNumero(String numero) {
-		Numero = numero;
-	}
-	public String getComplemento() {
-		return Complemento;
-	}
-	public void setComplemento(String complemento) {
-		Complemento = complemento;
-	}
-	public String getBairro() {
-		return Bairro;
-	}
-	public void setBairro(String bairro) {
-		Bairro = bairro;
-	}
-	public String getCidade() {
-		return Cidade;
-	}
-	public void setCidade(String cidade) {
-		Cidade = cidade;
-	}
-	public String getUF() {
-		return UF;
-	}
-	public void setUF(String uF) {
-		UF = uF;
-	}
-	public String getEmail() {
-		return Email;
-	}
-	public void setEmail(String email) {
-		Email = email;
-	}
-	public String getTelefone_Residencial() {
-		return Telefone_Residencial;
-	}
-	public void setTelefone_Residencial(String telefone_Residencial) {
-		Telefone_Residencial = telefone_Residencial;
-	}
-	public String getTelefone_Celular() {
-		return Telefone_Celular;
-	}
-	public void setTelefone_Celular(String telefone_Celular) {
-		Telefone_Celular = telefone_Celular;
-	}
-	public String getUniversidade() {
-		return Universidade;
-	}
-	public void setUniversidade(String universidade) {
-		Universidade = universidade;
-	}
-	public String getEnderecoUniversidade() {
-		return EnderecoUniversidade;
-	}
-	public void setEnderecoUniversidade(String enderecoUniversidade) {
-		EnderecoUniversidade = enderecoUniversidade;
-	}
-	public String getCurso() {
-		return Curso;
-	}
-	public void setCurso(String curso) {
-		Curso = curso;
-	}
-	public String getUsuario() {
-		return Usuario;
-	}
-	public void setUsuario(String usuario) {
-		Usuario = usuario;
-	}
-	public String getSenha() {
-		return Senha;
-	}
-	public void setSenha(String senha) {
-		Senha = senha;
-	}
-	public String getConfirmarSenha() {
-		return ConfirmarSenha;
-	}
-	public void setConfirmarSenha(String confirmarSenha) {
-		ConfirmarSenha = confirmarSenha;
-	}
-	public String getPerguntaSecreta() {
-		return PerguntaSecreta;
-	}
-	public void setPerguntaSecreta(String perguntaSecreta) {
-		PerguntaSecreta = perguntaSecreta;
-	}
-	public String getCargo() {
-		return Cargo;
-	}
-	public void setCargo(String cargo) {
-		Cargo = cargo;
-	}
-	public String getCategoria() {
-		return Categoria;
-	}
-	public void setCategoria(String categoria) {
-		Categoria = categoria;
-	}
-	public int getID() {
-		return ID;
-	}
-	public void setID(int iD) {
-		ID = iD;
-	}
+    }    
 
+    public String getNomeCompleto() {
+        return nome;
+    }
+
+    public void setNomeCompleto(String Nome_Completo) {
+        this.nome = Nome_Completo;
+    }
+
+    public String getDataDeNascimento() {
+        return datadenascimento;
+    }
+
+    public void setDataDeNascimento(String Data_de_Nascimento) {
+        this.datadenascimento = Data_de_Nascimento;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String Sexo) {
+        this.sexo = Sexo;
+    }
+
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String Email) {
+        this.email = Email;
+    }
+
+    public String getTelefoneResidencial() {
+        return telefoneresidencial;
+    }
+
+    public void setTelefoneResidencial(String Telefone_Residencial) {
+        this.telefoneresidencial = Telefone_Residencial;
+    }
+
+    public String getTelefoneCelular() {
+        return telefonecelular;
+    }
+
+    public void setTelefoneCelular(String Telefone_Celular) {
+        this.telefonecelular = Telefone_Celular;
+    }
+
+    public String getUniversidade() {
+        return universidade;
+    }
+
+    public void setUniversidade(String Universidade) {
+        this.universidade = Universidade;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String Curso) {
+        this.curso = Curso;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String Usuario) {
+        this.usuario = Usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String Senha) {
+        this.senha = Senha;
+    }
+
+    public String getConfirmarSenha() {
+        return confirmarsenha;
+    }
+
+    public void setConfirmarSenha(String ConfirmarSenha) {
+        this.confirmarsenha = ConfirmarSenha;
+    }
+
+    public String getPerguntaSecreta() {
+        return perguntasecreta;
+    }
+
+    public void setPerguntaSecreta(String PerguntaSecreta) {
+        this.perguntasecreta = PerguntaSecreta;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String Cargo) {
+        this.cargo = Cargo;
+    }
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String Categoria) {
+        this.categoria = Categoria;
+    }
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
+            
 }

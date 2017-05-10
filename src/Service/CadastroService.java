@@ -1,9 +1,12 @@
 package Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import DAO.CadastroDAO;
 import Model.Cadastro;
+
+
 
 public class CadastroService {
 	
@@ -31,4 +34,18 @@ public class CadastroService {
 		return dao.carregarTodosCadastros();
 	}
 
+	public void atualizar(Cadastro cadastro){
+		dao.atualizar(cadastro);
+	}
+	
+	public void excluir(int id){
+		dao.excluir(id);
+	}
+	
+	public ArrayList<Cadastro> listarCadastros(){
+		return dao.listarCadastros();
+	}
+	public ArrayList<Cadastro> listarCadastros(String chave){
+		return dao.listarCadastros(chave);
+	}
 }

@@ -339,7 +339,7 @@ public class SugestaoDAO {
 
 			stmt = con.prepareStatement(
 					"SELECT * FROM sugestoes WHERE cadastro_ID = ? ORDER BY SUBSTR( Data_Postada, 7, 4) desc , SUBSTR( Data_Postada, 4, 2) desc ,  SUBSTR( Data_Postada, 1, 2) desc");
-			stmt.setInt(1, lo.getID());
+			stmt.setInt(1, lo.getId());
 
 			rs = stmt.executeQuery();
 
